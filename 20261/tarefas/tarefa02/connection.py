@@ -14,10 +14,17 @@ try:
     cursor.execute(sql_criar_tabelas) # cursor executa a função
     conn.commit() # salva a criação
 
-    print("Sucesso! As tabelas da atividade foram criadas1")
+    print("Sucesso! As tabelas da atividade foram criadas!")
 
     # Etapa 2: vamos inserir os dados nas tabelas
-    
+    with open('esquema_inserts_data.sql', 'r', encoding='utf-8') as arq_insert:
+        sql_inserir_dados = arq_insert.read()
+
+    cursor.execute(sql_inserir_dados) # cursor executa a inserção
+    conn.commit() # salva a inserção
+
+    print("Sucesso! As inserções foram realizadas!")
+
     # Criar um cursor para executar comandos SQL
     #cursor = conn.cursor()
     #cursor.execute("SELECT version();")
@@ -28,6 +35,6 @@ except Exception as e:
     print(f"Erro na conexão: {e}")
 
 finally:
-    # 2. Fecha tudo ao final
+    # 2 Fechando tudo ao final
     cursor.close()
     conn.close()
