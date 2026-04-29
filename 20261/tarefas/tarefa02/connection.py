@@ -30,6 +30,20 @@ try:
     #cursor.execute("SELECT version();")
     #row = cursor.fetchone()
     #print(f"Versão do Banco: {row[0]}")
+
+    # ----------------------------------------------
+    # Questão 5 da Tarefa - ODBC e ORM
+    # item a. Inserir uma atividade em algum projeto
+
+    sql_inserir_atv_proj = """
+        INSERT INTO atividade (descricao, projeto, data_inicio, data_fim)
+        values
+        ('BD - Atividade 4', 3, '2026-03-25', '2026-04-28');
+        """
+    cursor.execute(sql_inserir_atv_proj)
+    conn.commit()
+    print("A atividade foi inserida em um projeto!")
+
     
 except Exception as e:
     print(f"Erro na conexão: {e}")
