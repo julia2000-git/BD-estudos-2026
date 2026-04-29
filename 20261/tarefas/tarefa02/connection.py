@@ -1,7 +1,7 @@
 import pyodbc
 
 # Iniciando a conexão com o BD
-conn = pyodbc.connect("DSN=PostgresAtvODBC;") #nome do DSN foi: PostgresAtvODBC
+conn = pyodbc.connect("DSN=PostgresAtvODBC;") #nome do DSN foi: PostgresAtvODBC (trocar DSN se for o caso)
 
 # Criação do cursor para executar os comandos
 cursor = conn.cursor()
@@ -32,8 +32,8 @@ try:
     #row = cursor.fetchone()
     #print(f"Versão do Banco: {row[0]}")
 
+    # Etapa 3 - Questão 5 da Tarefa - ODBC e ORM
     # ----------------------------------------------
-    # Questão 5 da Tarefa - ODBC e ORM
     # item a. Inserir uma atividade em algum projeto
 
     descricao_atv = 'BD - Atividade 4'  # declaração de variáveis
