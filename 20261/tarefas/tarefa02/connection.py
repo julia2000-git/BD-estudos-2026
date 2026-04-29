@@ -2,6 +2,7 @@ import pyodbc
 
 # Iniciando a conexão com o BD
 conn = pyodbc.connect("DSN=PostgresAtvODBC;") #nome do DSN foi: PostgresAtvODBC
+
 # Criação do cursor para executar os comandos
 cursor = conn.cursor()
 
@@ -49,7 +50,7 @@ try:
     cursor.execute(sql_inserir_atv_proj, (descricao_atv, cod_projeto, data_in, data_f))
     conn.commit()
     print("A atividade foi inserida em um projeto!")
-    
+
     # ----------------------------------------------
     # Item b. Atualizar o líder de algum projeto
 
