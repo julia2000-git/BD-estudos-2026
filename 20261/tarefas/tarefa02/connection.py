@@ -89,6 +89,7 @@ try:
             print(linha)
 
 except Exception as e:
+    cursor.rollback()
     print(f"Erro na conexão: {e}")
 
 finally:
